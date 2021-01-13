@@ -16,6 +16,6 @@ app.get("/combat", function(req, res) {
 
 
 
-app.listen(port || process.env.PORT, function() {
+app.listen(process.env.PORT || port, function() {
     console.log("Listening...");
 })
