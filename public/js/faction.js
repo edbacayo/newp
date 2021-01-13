@@ -54,7 +54,7 @@ $.getJSON(facURL, function(res) {
             if(ed[i].conflicts.length > 0) {
                 opponent = ed[i].conflicts[0].opponent_name;
                 daysWon = ed[i].conflicts[0].days_won;
-                conflict = opponent + "Won: " + daysWon;
+                conflict = opponent + "(Won: " + daysWon + ")";
             } else {
                 conflict = "NA";
             }
