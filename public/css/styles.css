@@ -1,0 +1,169 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1.dark {
+    font-weight: 700;
+    padding-top: 2%;
+    color: #222222;
+}
+
+h2.light {
+    font-weight: 700;
+    color: #fff;
+    margin: 20px auto 50px auto;
+}
+
+h2.dark {
+    font-weight: 700;
+    color: #222;
+    margin: 20px auto 50px auto;
+}
+
+h2.subhead {
+    color: #fff;
+}
+
+h5.card-title {
+    font-weight: 600;
+}
+
+h6.sub {
+    font-size: 0.7rem;
+    font-style: italic;
+    color: #444444;
+}
+
+.smaller-text {
+    font-size: .8rem;
+}
+
+.smallerer-text {
+    font-size: .7rem;
+}
+
+.center-text {
+    text-align: center;
+}
+
+/* title section */
+
+.container-fluid {
+    padding: 3% 15%;
+}
+
+.navbar {
+    padding: 0 0 40px 0;
+}
+
+.navbar-brand img {
+    width: 95px;
+}
+
+.nav-item {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+#title {
+    background-color: #222222;
+}
+
+#title h1, h3 {
+    color: #ffffff;
+}
+
+#title h1 {
+    font-weight: 700;
+    padding-top: 2%;
+}
+
+#title h2 {
+    font-size: 1rem;
+    margin: 20px auto;
+}
+
+.join-btn {
+    margin: 15px 10px 15px 0;
+}
+
+.headimage {
+    width: 95%;
+    margin: 3% auto;
+}
+
+
+
+/* what we do */
+
+#whatwedo {
+    padding: 6% 15%;
+}
+
+.whatwedo-col {
+    padding: 3% 2%;
+}
+
+
+
+
+/* highlights */
+#highlights {
+    background-color: #222222;
+    color: #ffffff;
+    text-align: center;
+    padding: 3% 15%;
+}
+
+#highlights h5 {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-weight: 700;
+}
+
+.high-sub {
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+.highlight-img {
+    width: 100%;
+}
+
+
+
+/* faction */
+#faction {
+    text-align: center;
+}
+
+.faction-status {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+
+
+/* footer */
+#footer {
+    padding: 3% 15%;
+}
+
+
+
+
+/* ******************** */
+/* combat */
+/* ******************** */
+
+
+/* pve combat */
+
+#pvecombat {
+    padding: 6% 15%;
+}
+
+.combat-card-text {
+    font-size: .8rem;
+}
