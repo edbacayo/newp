@@ -8,6 +8,11 @@ h1.dark {
     color: #222222;
 }
 
+h2 {
+    font-weight: 700;
+    margin: 20px auto 50px auto;
+}
+
 h2.light {
     font-weight: 700;
     color: #fff;
@@ -44,6 +49,14 @@ h6.sub {
 
 .center-text {
     text-align: center;
+}
+
+.white-text {
+    color: #fff;
+}
+
+.background-dark {
+    background-color: #222;
 }
 
 /* title section */
@@ -158,9 +171,9 @@ h6.sub {
 /* ******************** */
 
 
-/* pve combat */
+/* combat */
 
-#pvecombat {
+#pvecombat, #pvpcombat {
     padding: 6% 15%;
 }
 
