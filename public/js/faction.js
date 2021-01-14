@@ -13,14 +13,14 @@ var lastTick = new Date();
 var lastTickMillis = new Date();
 
 $.getJSON(tickURL, function (res) {
-    lastTick = res[0].time;
+    lastTick = res[0].updated_at;
     lastTickMillis = Date.parse(lastTick);
 
     var curr = new Date();
     var currHour = curr.getUTCHours();
     var currMinute = curr.getUTCMinutes();    
 
-    $("#faction-presence").after("<h6 class=\"sub\">" + "Last Tick: " + lastTick + " | Current: " + currHour + ":" + currMinute + "</h6>")
+    $("#faction-presence").after("<h6 class=\"sub\">" + "Last Tick (updated): " + lastTick + " | Current: " + currHour + ":" + currMinute + "</h6>")
 })
 
 
