@@ -8,24 +8,26 @@
 const tickURL = "https://elitebgs.app/api/ebgs/v5/ticks";
 const facURL = "https://elitebgs.app/api/ebgs/v5/factions?eddbId=76687";
 
+// var dateOptions = { year: "numeric", month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", hour24: "true" };
 var lastTick = new Date();
 var lastTickMillis = new Date();
 
-$.getJSON(tickURL, function(res) {
-    lastTick = res[0].updated_at;
+$.getJSON(tickURL, function (res) {
+    lastTick = res[0].time;
     lastTickMillis = Date.parse(lastTick);
+
     var curr = new Date();
     var currHour = curr.getUTCHours();
-    var currMinute = curr.getUTCMinutes();
-    
-    $("#faction-presence").after("<h6 class=\"sub\">" + "Last Tick: " + lastTick + " | Game: " + currHour + ":" + currMinute + "</h6>")
+    var currMinute = curr.getUTCMinutes();    
+
+    $("#faction-presence").after("<h6 class=\"sub\">" + "Last Tick: " + lastTick + " | Current: " + currHour + ":" + currMinute + "</h6>")
 })
 
 
-$.getJSON(facURL, function(res) {
+$.getJSON(facURL, function (res) {
     var ed = res.docs[0].faction_presence;
 
-    if(ed.length >0) {
+    if (ed.length > 0) {
         var systemName = "";
         var influence = 0;
         var active_states = "";
@@ -35,13 +37,13 @@ $.getJSON(facURL, function(res) {
         var opponent = "";
         var conflict = "";
 
-        for(var i = 0; i < ed.length; i++) {
+        for (var i = 0; i < ed.length; i++) {
             systemName = ed[i].system_name;
             influence = (ed[i].influence * 100).toFixed(2);
-            if(ed[i].active_states.length > 0) {
+            if (ed[i].active_states.length > 0) {
                 active_states = "";
-                if(ed[i].active_states.length > 1) {
-                    for(var x = 0; x < ed[i].active_states.length; x++) {
+                if (ed[i].active_states.length > 1) {
+                    for (var x = 0; x < ed[i].active_states.length; x++) {
                         active_states += ed[i].active_states[x].state + " ";
                     }
                 } else {
@@ -51,7 +53,7 @@ $.getJSON(facURL, function(res) {
                 active_states = "none";
             }
 
-            if(ed[i].conflicts.length > 0) {
+            if (ed[i].conflicts.length > 0) {
                 opponent = ed[i].conflicts[0].opponent_name;
                 daysWon = ed[i].conflicts[0].days_won;
                 conflict = opponent + "(Won: " + daysWon + ")";
@@ -60,19 +62,19 @@ $.getJSON(facURL, function(res) {
             }
 
             updatedAt = ed[i].updated_at;
-            if(Date.parse(updatedAt) > lastTickMillis) {
+            if (Date.parse(updatedAt) > lastTickMillis) {
                 afterTick = "Yes";
             } else {
                 afterTick = "No";
             }
 
-            
+
 
             $("#faction-presence").append("<tr><th scope=\"row\">" + systemName + "</th>" +
-            "<td>" + influence + "</td>" +
-            "<td>" + active_states + "</td>" +
-            "<td>" + conflict + "</td>" +
-            "<td>" + updatedAt + "(" + afterTick + ")" + "</td></tr>");
+                "<td>" + influence + "</td>" +
+                "<td>" + active_states + "</td>" +
+                "<td>" + conflict + "</td>" +
+                "<td>" + updatedAt + "(" + afterTick + ")" + "</td></tr>");
         }
     }
 })
