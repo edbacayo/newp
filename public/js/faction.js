@@ -39,7 +39,7 @@ $.getJSON(facURL, function (res) {
 
         for (var i = 0; i < ed.length; i++) {
             systemName = ed[i].system_name;
-            influence = (ed[i].influence * 100).toFixed(2);
+            influence = (ed[i].influence * 100).toFixed(1);
             if (ed[i].active_states.length > 0) {
                 active_states = "";
                 if (ed[i].active_states.length > 1) {
