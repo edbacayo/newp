@@ -87,11 +87,9 @@ app.get("/bgs", function (req, res) {
                 if(system.timestamp < yesterday) {
                     return;
                 }
-                console.log(yesterday);
-                console.log(system.timestamp);
 
                 // console.log(system.name + " | " + system.systemFaction.name + " | " + system.systemFaction.state + " | " + factionInf + " | " + system.timestamp);
-                tempStr.push(system.name + " | " + system.systemFaction.name + " | " + system.systemFaction.state + " | " + factionInf + " | " + system.timestamp);
+                tempStr.push(system.name + " | " + system.systemFaction.state + " | " + factionInf + " | " + system.timestamp);
             });
         }
         res.send(tempStr);
