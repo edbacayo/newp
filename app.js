@@ -3,6 +3,8 @@ const app = express();
 app.use(express.static("public"));
 const port = 3000;
 
+const ejs = require("ejs");
+app.set("view engine", "ejs");
 
 
 const systemPresence = ["LHS 2884", "Belobog", "Aganippe", "Mufrid", "Magec", "Mufrid", "Meliae", "Magec", "Dahan"];
@@ -50,11 +52,13 @@ const star_systems_Schema = new Schema({
 
 
 app.get("/", function (req, res) {
-    res.sendFile(__dirname + "/index.html");
+    //res.sendFile(__dirname + "/index.html");
+    res.render("index");
 })
 
 app.get("/combat", function (req, res) {
-    res.sendFile(__dirname + "/combat.html");
+    //res.sendFile(__dirname + "/combat.html");
+    res.render("combat");
 })
 
 app.get("/bgs", function (req, res) {
