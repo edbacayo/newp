@@ -31,19 +31,21 @@ module.exports.getTickDate = function () {
             var tickDate = new TickDate();
             tickDate.timestamp = ticks.timestamp;
             tickDate.starSystem = ticks.starSystem;
-            console.log(tickDate.timestamp);
             tickDates.push(tickDate);
         })
 
-        tickDates.forEach(function (times) {
-            console.log(times.starSystem);
-            console.log(times.timestamp);
-        })
+        displayTicks(tickDates);
     }).sort({ timestamp: -1 }).limit(10);
 
     // mongoose.connection.close();
-    return tickDates;
 }
+
+function displayTicks(tickDates) {
+    tickDates.forEach(function (times) {
+        console.log(times.starSystem);
+        console.log(times.timestamp);
+    })
+};
 
 
 module.exports.getTickFromEBGS = function () {
@@ -54,9 +56,6 @@ module.exports.getTickFromEBGS = function () {
         result.on("data", function (res) {
             const resData = JSON.parse(res);
             lastTick.push(new Date(resData[0].updated_at));
-            console.log(lastTick[0]);
-
-            console.log(lastTick.length);
             return lastTick[0];
         })
     });
