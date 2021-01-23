@@ -3,12 +3,9 @@ const https = require("https");
 
 class TickDate {
     constructor(timestamp, starSystem) {
-        var timestamp = new Date();
-        var starSystem = "";
-
         this.timestamp = timestamp;
         this.starSystem = starSystem;
-    }
+    };
 };
 
 

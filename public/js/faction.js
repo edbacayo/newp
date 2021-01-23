@@ -13,6 +13,7 @@ var lastTick = new Date();
 var lastTickMillis = new Date();
 
 $.getJSON(tickURL, function (res) {
+    $("#spinner-loading").css("visibility", "visible");
     lastTick = res[0].updated_at;
     lastTickMillis = Date.parse(lastTick);
 
@@ -84,6 +85,7 @@ function getFactionInfo() {
                     "<td>" + updatedAt + "(" + afterTick + ")" + "</td></tr>");
             }
         }
+        $("#spinner-loading").css("visibility", "hidden");
     })
     
     
