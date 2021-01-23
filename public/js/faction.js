@@ -2,7 +2,10 @@
 // **************************************************
 // * Created by: Ed Bacayo
 // * Purpose: Get faction data from Elite BGS
-// * Version: 1.0.0
+// * Version: 1.0.1
+// * Changelog:
+// * 1.0.1 - show spinner while loading
+// * 1.0.0 - initial
 // **************************************************
 
 const tickURL = "https://elitebgs.app/api/ebgs/v5/ticks";
