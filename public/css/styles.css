@@ -111,7 +111,7 @@ h6.sub {
 /* what we do */
 
 #whatwedo {
-    padding: 6% 15%;
+    padding: 8% 15%;
 }
 
 .whatwedo-col {
@@ -164,6 +164,11 @@ h6.sub {
     background-color: #222;
 }
 
+.social-icon {
+    font-size: 2rem;
+    margin-right: 10px;
+}
+
 
 
 
@@ -180,4 +185,8 @@ h6.sub {
 
 .combat-card-text {
     font-size: .8rem;
+}
+
+.list-group-item {
+    padding: 2%;
 }

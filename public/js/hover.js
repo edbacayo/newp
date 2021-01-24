@@ -1,7 +1,7 @@
 $( ".card" ).hover(
     function() {
-      $(this).removeClass("shadow").addClass("m-1"); 
+      $(this).removeClass("shadow").addClass("mt-n1"); 
     }, function() {
-      $(this).addClass("shadow").removeClass("m-1");
+      $(this).addClass("shadow").removeClass("mt-n1");
     }
   );
