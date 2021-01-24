@@ -6,8 +6,8 @@ const port = 3000;
 const ejs = require("ejs");
 app.set("view engine", "ejs");
 
-const myDate = require(__dirname + "/public/js/ticks.js");
-console.log(myDate.getTickDate());
+// const myDate = require(__dirname + "/public/js/ticks.js");
+// console.log(myDate.getTickDate());
 
 const dateOptions = {year: "numeric", month: "2-digit", day: "2-digit", hour12: false, minute: "2-digit"};
 

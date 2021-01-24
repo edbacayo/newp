@@ -59,6 +59,10 @@ h6.sub {
     background-color: #222;
 }
 
+.background-light {
+    background-color: #fff;
+}
+
 /* title section */
 
 .container-fluid {
@@ -78,10 +82,6 @@ h6.sub {
     padding-right: 10px;
 }
 
-
-#title {
-    background-color: #222222;
-}
 
 #title h1, h3 {
     color: #ffffff;
