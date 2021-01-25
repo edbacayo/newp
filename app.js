@@ -94,7 +94,7 @@ app.get("/bgs", function (req, res) {
     // star_systems.find({"timestamp":{$lt: yesterday}, "systemFaction.name":"New Pilots Initiative"}, function(err, starSystems) {
     star_systems.find({name: {$in: monitorSystem}}, function(err, starSystems) {
         if (err) {
-            console.log("Error: " + err);
+            console.log("Error retrieving MongoDB: " + err);
         } else {
             starSystems.forEach(function(system) {
                 system.factions.forEach(function(factions) {
@@ -106,7 +106,6 @@ app.get("/bgs", function (req, res) {
                     return;
                 }
 
-                // console.log(system.name + " | " + system.systemFaction.name + " | " + system.systemFaction.state + " | " + factionInf + " | " + system.timestamp);
                 tempStr.push(system.name + " | " + system.systemFaction.state.state + " | " + factionInf + " | " + new Date(system.timestamp).toLocaleString("en-US", {hour12: false}));
             });
         }
