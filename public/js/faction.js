@@ -24,7 +24,7 @@ $.getJSON(tickURL, function (res) {
     var curr = new Date();
     var currHour = curr.getUTCHours();
     var currMinute = curr.getUTCMinutes();
-    var tickInfo = "<h6 class=\"sub\">" + "Last Tick (updated): " + formatTime(lastTick) + " | Current: " + addZero(currHour) + ":" + addZero(currMinute) + "</h6>";
+    var tickInfo = "<h6 class=\"sub text-light\">" + "Last Tick (updated): " + formatTime(lastTick) + " | Current: " + addZero(currHour) + ":" + addZero(currMinute) + "</h6>";
 
     getFactionInfo();
     displayTickInfo(tickInfo);
