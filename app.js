@@ -17,7 +17,7 @@ const { getTickFromEBGS } = require("./public/js/ticks");
 // const mongoURL = "mongodb://localhost:27017/faction";
 const mongoURL = "mongodb+srv://web-user:EX9zMfiPNUKEoqX2@cluster0.j8vzx.mongodb.net/production?retryWrites=true&w=majority";
 const tickSchema = mongoose.Schema({timestamp: String});
-const star_systems_Schema = ({
+const star_systems_Schema = mongoose.Schema({
     timestamp: Date,
     name: String,
     factions: [{
