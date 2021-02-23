@@ -18,13 +18,13 @@ var lastTickMillis = new Date();
 
 $.getJSON(tickURL, function (res) {
     $("#spinner-loading").css("visibility", "visible");
-    lastTick = new Date(res[0].updated_at);
+    lastTick = new Date(res[0].time);
     lastTickMillis = Date.parse(lastTick);
 
     var curr = new Date();
     var currHour = curr.getUTCHours();
     var currMinute = curr.getUTCMinutes();
-    var tickInfo = "<h6 class=\"sub text-light\">" + "Last Tick (updated): " + formatTime(lastTick) + " | Current: " + addZero(currHour) + ":" + addZero(currMinute) + "</h6>";
+    var tickInfo = "<h6 class=\"sub text-light\">" + "Last Tick: " + formatTime(lastTick) + " | Current: " + addZero(currHour) + ":" + addZero(currMinute) + "</h6>";
 
     getFactionInfo();
     displayTickInfo(tickInfo);
@@ -54,7 +54,7 @@ function addZero(i) {
 function getFactionInfo() {
     $.getJSON(facURL, function (res) {
         var ed = res.docs[0].faction_presence;
-
+        
         if (ed.length > 0) {
             var systemName = "";
             var influence = 0;
@@ -64,6 +64,9 @@ function getFactionInfo() {
             var daysWon = "";
             var opponent = "";
             var conflict = "";
+
+            // Update faction presence card
+            $("#whatwedo .card p.card-text").eq(0).text("We are present in " + ed.length + " systems.")
 
             for (var i = 0; i < ed.length; i++) {
                 systemName = ed[i].system_name;
